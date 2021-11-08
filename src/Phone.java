@@ -56,6 +56,6 @@ public class Phone implements Serializable {
                 ", Camera: " + cameraMP + "MP" +
                 ", ScreenSizeInches: " + screenSizeInches + "\"" +
                 ", Smart: " + smart +
-                ", Price: €" + priceEUR;
+                ", Price: €" + priceEUR + "\n";
     }
 }

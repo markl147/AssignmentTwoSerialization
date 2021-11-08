@@ -8,7 +8,7 @@ import java.util.ArrayList;
 public class MainClass {
 
     public static void main(String[] args) throws IOException, ClassNotFoundException {
-
+        //Create global ArrayList
         ArrayList<Phone> phones = new ArrayList<>();
         //Create objects
         Phone ph1 = new Phone("Sony", "Xperia X", 32, 12.5, 4.6, true, 150);
@@ -18,7 +18,7 @@ public class MainClass {
         Phone ph5 = new Phone("Motorola", "M1", 8, 11.3, 4.9, true, 100);
         Phone ph6 = new Phone("iPhone", "6", 32, 13.5, 6.4, true, 250);
         Phone ph7 = new Phone("Alcatel", "A3", 8, 9.3, 2.4, false, 50);
-
+        //Create GUI Object
         GUI gui = new GUI();
         //Serialize
         try {
@@ -83,21 +83,27 @@ public class MainClass {
             e.printStackTrace();
         }
 
+        //Create another Arraylist and let it equal to the deserialized one
         ArrayList<Phone> finalPhones = phones;
+        //add an action listener to the button in the gui
         gui.b1.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
+                //clears the textbox
                 gui.display.setText("");
+                //for loop to cycle through array
                 for (Phone phone : finalPhones) {
+                    //puts a space between each object in the text box
                     if(gui.display.getText().length() != 0)
                     {
                         gui.display.append("\n");
                     }
+                    //using the toString to display the onjects
                     gui.display.append(phone.toString());
                 }
             }
         });
 
-        // Set the action Listener for button 2 to hide the array Data
+        //clears the text box
         gui.b2.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 gui.display.setText("");

@@ -1,52 +1,30 @@
 import javax.swing.*;
-import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.util.ArrayList;
 
 public class GUI extends JFrame {
 
+    JFrame frame = new JFrame();
+    JPanel panel = new JPanel();
     JButton b1 = new JButton("Show all");
     JButton b2 = new JButton("Clear");
-
     JTextArea display = new JTextArea();
 
     public GUI() {
 
+        panel.setBorder(BorderFactory.createEmptyBorder(25, 250, 250, 250));
 
-//        GridBagLayout gridbag = new GridBagLayout();
-//        GridBagConstraints constraints = new GridBagConstraints();
-//        getContentPane().setLayout(gridbag);
-//        constraints.fill = GridBagConstraints.HORIZONTAL;
+        panel.add(b1);
+        panel.add(b2);
+        panel.add(display);
 
-        setSize(1000, 1000);
+        frame.add(panel);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setTitle("Phones");
 
-//        constraints.gridx = 0;
-//        constraints.gridy = 0;
-//        gridbag.setConstraints(b1, constraints);
-        getContentPane().add(b1);
-
-//        constraints.gridx = 1;
-//        constraints.gridy = 1;
-//        gridbag.setConstraints(display, constraints);
-        getContentPane().add(display);
-
-//        constraints.gridx = 3;
-//        constraints.gridy = 0;
-//        gridbag.setConstraints(b2, constraints);
-        getContentPane().add(b2);
-
-//        display.setSize(600, 600);
-
-
-        setVisible(true);
-
-
+        frame.pack();
+        frame.setVisible(true);
+        frame.setLocationRelativeTo(null);
     }
 
 
-    public static void main(String[] args) {
-
-        new GUI();
-    }
+    public static void main(String[] args) { new GUI(); }
 }
