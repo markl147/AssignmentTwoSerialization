@@ -47,4 +47,15 @@ public class Phone implements Serializable {
     public int getPriceEUR() {
         return priceEUR;
     }
+
+    @Override
+    public String toString() {
+        return "Make: " + make +
+                ", Model: " + model +
+                ", Memory: " + memoryGB + "GB" +
+                ", Camera: " + cameraMP + "MP" +
+                ", ScreenSizeInches: " + screenSizeInches + "\"" +
+                ", Smart: " + smart +
+                ", Price: €" + priceEUR;
+    }
 }
